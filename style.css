@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap'); /*importaçaão do google para fontes*/
+
+:root {
+    --cor-primaria: #2B3467;
+    --cor-secundaria: #D4D925;
+    --cor-terciaria: #2ceb3c;
+    --cor-hover: #F79327;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+} /*reset da página*/
+
+body{
+    /*height: 100vh;*/ /*oque vai caber na tela, vh = viewport heigth, altura da tela*/
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}/*corpo da pag, com o tamanho em viewheight (altura de vizualização da web, 100% da tela do navegador), 
+    border-box não ocupa toda a tela, e da para usar padding ainda, etc; cor de fundo e cor do texto.*/
+
+.cabecalho {
+    padding: 2% 0% 0% 15%; /*espaçamento acima, a direita, abaixo, a esquerda.*/
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem; /*24px/16*/
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao{
+    padding: 5% 15%;/*aqui trocamos o margin p/ padding, pois a margem é o afastamento ao canto da tela {...}*/
+    display: flex; /*{...} já o espaçamento é o espaço entre a borda e o conteúdo*/
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px; /*distÂncia entre a section e a imagem dentro da main apresentacao*/
+}/*; display flex p/ a organização flexivel dos elementos; alinha os itens     no  centro (meio); e a relação deles é horizontal.*/
+
+.apresentacao__conteudo{
+    width: 50%; /*largura*/
+    display: flex; /*organização dos elementos em blocos*/
+    flex-direction: column; /*em coluna, ou seja um abaixo do outro*/
+    gap: 40px; /*distância entre os membros*/
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}/*tamanho da fonte 36px, e o uso da fonte krona one*/
+
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+
+
+.apresentacao__conteudo__texto{
+    font-size: 2.25rem; /*rem é a medida da font, 1 rem 16 ou15px, 2 30a32px, 2,25*16 36*/
+    font-family: var(--font-secundaria);
+}
+
+.Eu:hover {
+    color: var(--cor-hover);
+}/*hover funciona p/ quando se passa o mouse sobre o elemento. usa-se normalmente assim, com dois pontos
+    após a identificação da tag*/
+
+.apresentacao__links {
+    display: flex; /*organização em flexbox*/
+    flex-direction: column; /*direção do flex automaticamente é na horizontal (row), então devemos mudar p/ column*/
+    justify-content: space-between; /*espaçamento para os cantos*/
+    align-items: center; /*alinhando os itens ao centro*/
+    gap: 32px; /*espaçamento entre os elementos de 32px*/
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__acesso {
+    /*background-color: #22D4FD; foi usado no 1 cod, depois não foi mais. cor de fundo;*/
+    display: flex; /*organização em flex,na esquerda.*/
+    justify-content: center; /*coloca-os no centro*/
+    gap: 16px; /*espaço entre eles*/
+    border: 2px solid var(--cor-terciaria);
+    width: 50%; /*largura*/
+    text-align: center; /*alinhando o texto no centro*/
+    border-radius:  8px; /*raio da borda*/
+    font-size: 1.5rem; /*tamanho da fonte*/
+    font-weight: 600; /*peso da fonte, ou se ela é fina ou grossa*/
+    padding: 21.5px 0; /*espaçamento*/
+    text-decoration: none; /*texto sem decoração*/
+    color: var(--cor-secundaria); /*cor do texto, preta*/
+    font-family: var(--font-secundaria); /*uso da fonte montserrat*/
+}
+
+.apresentacao__links__acesso:hover{
+    background-color: var(--cor-hover);    
+}/*quando passar o mouse acima, o elemento deerá ficar com esta cor*/
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    padding: 24px;/*espaçamento*/
+    color: var(--cor-primaria);/*cor de texto*/
+    background-color: var(--cor-terciaria);/*cor do elemento, ou fundo*/
+    text-align: center;/*alinhar o texto ao centro*/
+    font-family: var(--font-secundaria);/*estilo de fonte do google*/
+    font-size: 1.5rem;/*tamanho da fonte*/
+    font-weight: 400;/*peso da fonte*/
+}
+
+@media (max-width: 1200px) {
+
+    .cabecalho {
+        padding: 10%;
+    }/*se a largura (equivale tbm a todo espaço) for menor que 1200pixels, a direção da tag apresentação (main)
+    saíra de linha-row para coluna, e a parte de baixo irá para cima.*/
+    
+    .cabecalho__menu {
+        justify-content: center;
+    }/*justifica o cabeçalho ao centro*/
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }/*no primeiro está escrito, continuação é que todo o espaçamento, direita, esquerda, acima, abaixo são de 5%*/
+
+    .apresentacao__conteudo {
+        width: auto;
+    }/*largura do texto e links é automática em relação aos 5% do apresetação*/
+    
+}
